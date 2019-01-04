@@ -15,3 +15,4 @@ authorities = client.urlMetrics(
 
 print(smythsonDA)
 print(authorities)
+print("hi")
