@@ -8,21 +8,23 @@ client = Mozscape(
     'mozscape-f03b16db58',
     '5f7418e041cf61841d72ef26c6f7a905')
 
-smythsonMetrics = client.urlMetrics('www.smythson.com')
-smythsonDA = smythsonMetrics['pda']
+domain = input()
+
+Metrics = client.urlMetrics(domain)
+DA = Metrics['pda']
 
 # for Page Authority too:
 # authorities = client.urlMetrics(
-#    ('www.smythson.com'),
+#    (domain),
 #    Mozscape.UMCols.domainAuthority | Mozscape.UMCols.pageAuthority)
 
 now = datetime.now()
 month = now.strftime("%B-%y")
 print(month)
-print(smythsonDA)
+print(DA)
 
-update = [month,str(smythsonDA)]
+update = [month,str(DA)]
 
-with open('smythsonda.csv','a') as fd:
+with open('da.csv','a') as fd:
 	wr = csv.writer(fd,delimiter=',')
 	wr.writerow(update)
