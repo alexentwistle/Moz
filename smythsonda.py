@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 from mozscape import Mozscape
+from datetime import datetime
+import csv
 
 client = Mozscape(
     'mozscape-f03b16db58',
@@ -9,9 +11,18 @@ client = Mozscape(
 smythsonMetrics = client.urlMetrics('www.smythson.com')
 smythsonDA = smythsonMetrics['pda']
 
-# for page authority too:
-authorities = client.urlMetrics(
-    ('www.smythson.com'),
-    Mozscape.UMCols.domainAuthority | Mozscape.UMCols.pageAuthority)
+# for Page Authority too:
+# authorities = client.urlMetrics(
+#    ('www.smythson.com'),
+#    Mozscape.UMCols.domainAuthority | Mozscape.UMCols.pageAuthority)
 
+now = datetime.now()
+month = now.strftime("%B-%y")
+print(month)
 print(smythsonDA)
+
+update = [month,str(smythsonDA)]
+
+with open('da.csv','a') as fd:
+	wr = csv.writer(fd,delimiter=',')
+	wr.writerow(update)
