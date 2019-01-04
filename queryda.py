@@ -23,7 +23,7 @@ month = now.strftime("%B-%y")
 print(month)
 print(DA)
 
-update = [month,str(DA)]
+update = [month,domain,str(DA)]
 
 with open('da.csv','a') as fd:
 	wr = csv.writer(fd,delimiter=',')
