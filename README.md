@@ -1,4 +1,4 @@
-# Moz API README
+# Moz API - Domain Authority
 
 - Takes user input of domain
 - Queries Domain Authority (DA) from Moz API
