@@ -12,18 +12,10 @@ client = Mozscape(
 # Let's get some URL metrics. Results are now an array of dictionaries
 # the i'th dictionary is the results for the i'th URL
 smythsonMetrics = client.urlMetrics('www.smythson.com')
+smythsonDA = smythsonMetrics['pda']
 
 # Now let's say we only want specific columns in the results
 
 authorities = client.urlMetrics(
     ('www.smythson.com'),
     Mozscape.UMCols.domainAuthority | Mozscape.UMCols.pageAuthority)
-		
-
-
-# Now for some links results
-links = client.links('www.moz.com')
-# The links API has more columns to specify, as well as sort, scope, etc.
-links = client.links(
-    'www.moz.com', scope='domain_to_domain', sort='domain_authority',
-    filters=['external', 'nofollow'], targetCols=Mozscape.UMCols.url)
