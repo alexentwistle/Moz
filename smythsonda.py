@@ -9,10 +9,9 @@ client = Mozscape(
 smythsonMetrics = client.urlMetrics('www.smythson.com')
 smythsonDA = smythsonMetrics['pda']
 
+# for page authority too:
 authorities = client.urlMetrics(
     ('www.smythson.com'),
     Mozscape.UMCols.domainAuthority | Mozscape.UMCols.pageAuthority)
 
 print(smythsonDA)
-print(authorities)
-print("hi")
