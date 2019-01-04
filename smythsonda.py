@@ -19,3 +19,5 @@ smythsonDA = smythsonMetrics['pda']
 authorities = client.urlMetrics(
     ('www.smythson.com'),
     Mozscape.UMCols.domainAuthority | Mozscape.UMCols.pageAuthority)
+
+print(smythsonDA)
