@@ -25,6 +25,6 @@ print(DA)
 
 update = [month,domain,str(DA)]
 
-with open('da.csv','a') as fd:
+with open('daquery.csv','a') as fd:
 	wr = csv.writer(fd,delimiter=',')
 	wr.writerow(update)
