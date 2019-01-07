@@ -9,7 +9,9 @@ client = Mozscape(
     'mozscape-f03b16db58',
     '5f7418e041cf61841d72ef26c6f7a905')
 
-smythsonMetrics = client.urlMetrics('www.smythson.com')
+domain = "smythson.com"
+
+smythsonMetrics = client.urlMetrics(domain)
 smythsonDA = smythsonMetrics['pda']
 
 # smythsonMetrics contains other metrics, as well as DA. Alternatively, un-comment the following to find PA:
@@ -21,7 +23,7 @@ smythsonDA = smythsonMetrics['pda']
 now = datetime.now()
 month = now.strftime("%B-%y")
 
-update = [month,str(smythsonDA)]
+update = [month,domain,str(smythsonDA)]
 print(update)
 
 with open('smythsonda.csv','a') as fd:
